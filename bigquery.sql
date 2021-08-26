@@ -1,5 +1,6 @@
 #No. of Country Regions
 
+
 ```sql
 SELECT count(distinct country_region) FROM `bigquery-public-data.covid19_google_mobility.mobility_report`
 ```
