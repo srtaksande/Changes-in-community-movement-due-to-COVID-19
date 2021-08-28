@@ -99,8 +99,3 @@ US	United States	California	San Francisco County			6075	ChIJIQBpAG2ahYARUksNqd0_
 US	United States	California	San Francisco County			6075	ChIJIQBpAG2ahYARUksNqd0_1h8	3/22/2020	-72	-30	-34	-62	-48	19
 US	United States	California	San Francisco County			6075	ChIJIQBpAG2ahYARUksNqd0_1h8	3/23/2020	-68	-28	-50	-74	-76	34
 US	United States	California	San Francisco County			6075	ChIJIQBpAG2ahYARUksNqd0_1h8	3/24/2020	-70	-28	-54	-75	-76	36
-
-
-
-  
-  
