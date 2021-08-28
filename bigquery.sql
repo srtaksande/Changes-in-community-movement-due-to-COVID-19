@@ -1,4 +1,4 @@
-#No. of Country Regions
+# Question 1: No. of Country Regions
 
 
 ```sql
@@ -13,7 +13,7 @@ SELECT min(retail_and_recreation_percent_change_from_baseline), max(retail_and_r
 
 Answer: -100 , 616
 
-#Minimum and Maximum workplace percentage change from baseline in United Aram Emirates
+# Question 2: Minimum and Maximum workplace percentage change from baseline in United Aram Emirates
 
 ```sql
 SELECT min(workplaces_percent_change_from_baseline), max(workplaces_percent_change_from_baseline) FROM `bigquery-public-data.covid19_google_mobility.mobility_report`
@@ -22,7 +22,7 @@ where country_region = "United Arab Emirates"
 
 Answer: -79 , 14
 
-#Min Max and Avg grocery and pharmacy percent change by country_region
+# Question 3: Min Max and Avg grocery and pharmacy percent change by country_region
 
 ```sql
 SELECT country_region,
@@ -43,7 +43,7 @@ Antigua and Barbuda	-96	62	-6.286389414
 Angola	-71	61	3.430401366
 Aruba	-96	40	-5.245746692
 
-# Min Max and Avg grocery and pharmacy percent change by country_region in Descending Order
+# Question 5: Min Max and Avg grocery and pharmacy percent change by country_region in Descending Order
 
 ```sql
 SELECT country_region,
@@ -66,3 +66,40 @@ Mongolia	-83	180	45.81758034
 Afghanistan	-49	170	42.65082645
 
 
+# Question 6: Fetch all the data for sountry region United States, sub region1 California and sub region2 San Francisco Country between dates 2020-03-10 and 2020-03-24
+
+```sql
+SELECT
+  *
+FROM
+  `bigquery-public-data.covid19_google_mobility.mobility_report` 
+WHERE
+  country_region = "United States"
+  AND sub_region_1 = "California"
+  AND sub_region_2 = "San Francisco County"
+  AND date BETWEEN "2020-03-10" AND "2020-03-24"
+ORDER BY
+  date 
+  ```
+  Answer:
+  
+  country_region_code	country_region	sub_region_1	sub_region_2	metro_area	iso_3166_2_code	census_fips_code	place_id	date	retail_and_recreation_percent_change_from_baseline	grocery_and_pharmacy_percent_change_from_baseline	parks_percent_change_from_baseline	transit_stations_percent_change_from_baseline	workplaces_percent_change_from_baseline	residential_percent_change_from_baseline
+US	United States	California	San Francisco County			6075	ChIJIQBpAG2ahYARUksNqd0_1h8	3/10/2020	-6	10	9	-24	-21	9
+US	United States	California	San Francisco County			6075	ChIJIQBpAG2ahYARUksNqd0_1h8	3/11/2020	-13	8	3	-30	-26	11
+US	United States	California	San Francisco County			6075	ChIJIQBpAG2ahYARUksNqd0_1h8	3/12/2020	-17	16	-4	-35	-32	14
+US	United States	California	San Francisco County			6075	ChIJIQBpAG2ahYARUksNqd0_1h8	3/13/2020	-26	17	-16	-40	-35	15
+US	United States	California	San Francisco County			6075	ChIJIQBpAG2ahYARUksNqd0_1h8	3/14/2020	-41	1	-54	-48	-13	11
+US	United States	California	San Francisco County			6075	ChIJIQBpAG2ahYARUksNqd0_1h8	3/15/2020	-42	-1	-35	-41	-15	10
+US	United States	California	San Francisco County			6075	ChIJIQBpAG2ahYARUksNqd0_1h8	3/16/2020	-32	32	-20	-52	-54	20
+US	United States	California	San Francisco County			6075	ChIJIQBpAG2ahYARUksNqd0_1h8	3/17/2020	-64	-11	-27	-70	-72	32
+US	United States	California	San Francisco County			6075	ChIJIQBpAG2ahYARUksNqd0_1h8	3/18/2020	-67	-18	-35	-72	-73	33
+US	United States	California	San Francisco County			6075	ChIJIQBpAG2ahYARUksNqd0_1h8	3/19/2020	-66	-16	-25	-71	-73	33
+US	United States	California	San Francisco County			6075	ChIJIQBpAG2ahYARUksNqd0_1h8	3/20/2020	-69	-16	-36	-70	-72	34
+US	United States	California	San Francisco County			6075	ChIJIQBpAG2ahYARUksNqd0_1h8	3/21/2020	-73	-22	-38	-65	-49	20
+US	United States	California	San Francisco County			6075	ChIJIQBpAG2ahYARUksNqd0_1h8	3/22/2020	-72	-30	-34	-62	-48	19
+US	United States	California	San Francisco County			6075	ChIJIQBpAG2ahYARUksNqd0_1h8	3/23/2020	-68	-28	-50	-74	-76	34
+US	United States	California	San Francisco County			6075	ChIJIQBpAG2ahYARUksNqd0_1h8	3/24/2020	-70	-28	-54	-75	-76	36
+
+
+
+  
