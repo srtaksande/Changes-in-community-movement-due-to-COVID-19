@@ -99,3 +99,14 @@ US	United States	California	San Francisco County			6075	ChIJIQBpAG2ahYARUksNqd0_
 US	United States	California	San Francisco County			6075	ChIJIQBpAG2ahYARUksNqd0_1h8	3/22/2020	-72	-30	-34	-62	-48	19
 US	United States	California	San Francisco County			6075	ChIJIQBpAG2ahYARUksNqd0_1h8	3/23/2020	-68	-28	-50	-74	-76	34
 US	United States	California	San Francisco County			6075	ChIJIQBpAG2ahYARUksNqd0_1h8	3/24/2020	-70	-28	-54	-75	-76	36
+
+
+#Question 7: using Abu Dhabi as inner join
+
+
+```sql
+with abu_dhabi as
+(select sub_region_1 from `bigquery-public-data.covid19_google_mobility.mobility_report` where sub_region_1 = 'Abu Dhabi')
+SELECT * FROM `bigquery-public-data.covid19_google_mobility.mobility_report` a inner join abu_dhabi b on a.sub_region_1 = b.sub_region_1
+```
+
