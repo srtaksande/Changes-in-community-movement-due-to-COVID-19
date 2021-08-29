@@ -118,3 +118,23 @@ AE	United Arab Emirates	Abu Dhabi			AE-AZ		ChIJGczaTT5mXj4RBNmakTvGr4s	2/17/2020
 AE	United Arab Emirates	Abu Dhabi			AE-AZ		ChIJGczaTT5mXj4RBNmakTvGr4s	2/17/2020	-3	2	4	-3	2	1	Abu Dhabi
 AE	United Arab Emirates	Abu Dhabi			AE-AZ		ChIJGczaTT5mXj4RBNmakTvGr4s	2/17/2020	-3	2	4	-3	2	1	Abu Dhabi
 
+
+# Question 8: Using Barbados as Inner Join
+
+```sql
+with Barbados as
+(select country_region from `bigquery-public-data.covid19_google_mobility.mobility_report` where country_region = 'Barbados')
+
+SELECT * FROM `bigquery-public-data.covid19_google_mobility.mobility_report` a inner join Barbados b on a.country_region = b.country_region
+limit 5
+```
+
+Answer:
+
+country_region_code	country_region	sub_region_1	sub_region_2	metro_area	iso_3166_2_code	census_fips_code	place_id	date	retail_and_recreation_percent_change_from_baseline	grocery_and_pharmacy_percent_change_from_baseline	parks_percent_change_from_baseline	transit_stations_percent_change_from_baseline	workplaces_percent_change_from_baseline	residential_percent_change_from_baseline	country_region_1
+BB	Barbados						ChIJoxoyrvvxQ4wRKzb0jLNR7A4	10/17/2020	-18	-12	25	-35	-18	7	Barbados
+BB	Barbados						ChIJoxoyrvvxQ4wRKzb0jLNR7A4	10/17/2020	-18	-12	25	-35	-18	7	Barbados
+BB	Barbados						ChIJoxoyrvvxQ4wRKzb0jLNR7A4	10/17/2020	-18	-12	25	-35	-18	7	Barbados
+BB	Barbados						ChIJoxoyrvvxQ4wRKzb0jLNR7A4	10/17/2020	-18	-12	25	-35	-18	7	Barbados
+BB	Barbados						ChIJoxoyrvvxQ4wRKzb0jLNR7A4	10/17/2020	-18	-12	25	-35	-18	7	Barbados
+
